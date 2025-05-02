@@ -63,7 +63,7 @@ const Travel = () => {
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/cities');
+        const response = await axios.get('https://booking-d1u2.onrender.com/api/cities');
         setCities(response.data);
       } catch (err) {
         setError('Failed to fetch cities');
@@ -85,7 +85,7 @@ const Travel = () => {
     setActiveStep(0);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/search', {
+      const response = await axios.post('https://booking-d1u2.onrender.com/api/search', {
         from: fromCity,
         to: toCity,
         date: travelDate.toISOString().split('T')[0],
@@ -109,7 +109,7 @@ const Travel = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3000/api/book', {
+      const response = await axios.post('https://booking-d1u2.onrender.com/api/book', {
         userId: 'user123',
         optionId: selectedOption.id,
         mode: travelMode,
